@@ -1,0 +1,86 @@
+
+<div class="container ">
+    <h1 class="text-center">Currency</h1>
+</div>
+<hr>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-5 card">
+
+            <div class="login">
+                <h1 class="text-center">Login</h1>
+                <form [formGroup]="loginForm" (ngSubmit)="enviarLogin(loginForm)">
+                    <div class="form-group">
+                        <label>Usuario</label>
+                        <input type="text" class="form-control" formControlName="usuario" placeholder="usuario">
+                        <div class="error"
+                            *ngIf="loginForm.get('usuario').hasError('required') && loginForm.get('usuario').touched">
+                            Identificación requerida
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="password" placeholder="contraseña" class="form-control" formControlName="contrasena">
+                        <div class="error"
+                            *ngIf="loginForm.get('contrasena').hasError('required') && loginForm.get('contrasena').touched">
+                            Contraseña requerida
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-block btn-primary">Ingresar</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-6 card">
+            <div class="login">
+                <h1 class="text-center">Registro</h1>
+                <form [formGroup]="registroForm" (ngSubmit)="enviarRegistro(registroForm)">
+
+
+                    <div class="form-group">
+                        <label>Nombres</label>
+                        <input type="text" placeholder="nombres" class="form-control" formControlName="nombres">
+                        <div class="error"
+                            *ngIf="registroForm.get('nombres').hasError('required') && registroForm.get('nombres').touched">
+                            Nombres requerido
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Apellidos</label>
+                        <input type="text" placeholder="apellidos" class="form-control" formControlName="apellidos">
+                        <div class="error"
+                            *ngIf="registroForm.get('apellidos').hasError('required') && registroForm.get('apellidos').touched">
+                            Apellidos requerido
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>usuario</label>
+                        <input placeholder="usuario" type="text" class="form-control" formControlName="usuario">
+                        <div class="error"
+                            *ngIf="registroForm.get('usuario').hasError('required') && registroForm.get('usuario').touched">
+                            identificación requerida
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input  placeholder="contraseña" type="password" class="form-control" formControlName="contrasena">
+                        <div class="error"
+                            *ngIf="registroForm.get('contrasena').hasError('required') && registroForm.get('contrasena').touched">
+                            contraseña requerida
+                        </div>
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-block btn-primary">Registrar</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

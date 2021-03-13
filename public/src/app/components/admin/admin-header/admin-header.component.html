@@ -1,0 +1,11 @@
+<div class="primary">
+  <div fxShow="true" fxHide.gt-sm="true"></div>
+  <a mat-button class="companyName" routerLink="/admin">
+    <span>Currency - cambio de moneda</span>
+  </a>
+  <span class="example-spacer"></span>
+  <div fxShow="true" fxHide.lt-md="true">
+    <a mat-button routerLink="/chat">Inicio</a>
+    <a mat-button (click)="logOut()" >Salir</a>
+  </div>
+</div>
